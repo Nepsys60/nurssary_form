@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#F4F6F0"/>
+  <circle cx="200" cy="150" r="110" fill="#E2FADD"/>
+  <ellipse cx="200" cy="230" rx="120" ry="25" fill="#C9E1C4" opacity="0.6"/>
+  <!-- Sack shape -->
+  <path d="M140 100C140 90 160 85 200 85C240 85 260 90 260 100L275 220C275 235 245 245 200 245C155 245 125 235 125 220L140 100Z" fill="#77574D"/>
+  <path d="M145 105C150 95 170 92 200 92C230 92 250 95 255 105L268 215C268 227 240 238 200 238C160 238 132 227 132 215L145 105Z" fill="#5D4037"/>
+  <!-- Sack Top Tie -->
+  <path d="M140 100C140 95 160 92 200 92C240 92 260 95 260 100C260 105 240 108 200 108C160 108 140 105 140 100Z" fill="#8D6E63"/>
+  <!-- Label on Sack -->
+  <rect x="155" y="125" width="90" height="90" rx="8" fill="#FFFFFF"/>
+  <rect x="160" y="130" width="80" height="80" rx="6" fill="#FBFBFA" stroke="#2E7D32" stroke-width="1.5"/>
+  <circle cx="200" cy="150" r="12" fill="#E8F5E9"/>
+  <path d="M195 150C195 147 205 147 205 150C205 153 195 153 195 156" stroke="#2E7D32" stroke-width="2" stroke-linecap="round"/>
+  <text x="200" y="174" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="800" fill="#0D200E" text-anchor="middle">VERMICOMPOST</text>
+  <text x="200" y="186" font-family="Inter, sans-serif" font-size="7" font-weight="600" fill="#77574D" text-anchor="middle">PURE WORM CASTINGS</text>
+  <text x="200" y="200" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" fill="#0D631B" text-anchor="middle">100% ORGANIC</text>
+  <!-- Decorative Leaves -->
+  <path d="M290 130C310 110 330 130 330 150C310 150 290 140 290 130Z" fill="#2E7D32" opacity="0.8"/>
+  <path d="M110 140C90 120 70 140 70 160C90 160 110 150 110 140Z" fill="#4CAF50" opacity="0.8"/>
+</svg>
