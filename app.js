@@ -165,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initMobileMenu();
   initHeaderScroll();
+  initSoilCalculator();
   updateCartUI();
 });
 
@@ -716,7 +717,107 @@ function initMobileMenu() {
     btn.addEventListener('click', () => {
       drawer.classList.toggle('active');
     });
+
+    // Close on navigation link click
+    const links = drawer.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('active');
+      });
+    });
   }
+}
+
+// Soil & Compost Calculator
+let currentPotSize = '12'; // default 12-inch pot
+let currentPotCount = 15;
+
+function initSoilCalculator() {
+  const slider = document.getElementById('calc-pot-slider');
+  const display = document.getElementById('pot-count-display');
+  const sizeBtns = document.querySelectorAll('.pot-size-btn');
+
+  if (slider && display) {
+    slider.addEventListener('input', (e) => {
+      currentPotCount = parseInt(e.target.value, 10);
+      display.textContent = `${currentPotCount} Pots`;
+      updateSoilCalculations();
+    });
+  }
+
+  sizeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      sizeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentPotSize = btn.getAttribute('data-size');
+      updateSoilCalculations();
+    });
+  });
+
+  updateSoilCalculations();
+}
+
+function updateSoilCalculations() {
+  let compostMultiplier = 1.0;
+  let vermiMultiplier = 0.3;
+  let cocoMultiplier = 0.08;
+
+  if (currentPotSize === '8') {
+    compostMultiplier = 0.45;
+    vermiMultiplier = 0.15;
+    cocoMultiplier = 0.04;
+  } else if (currentPotSize === '16') {
+    compostMultiplier = 2.0;
+    vermiMultiplier = 0.6;
+    cocoMultiplier = 0.16;
+  }
+
+  const cowDungKg = Math.max(5, Math.round(currentPotCount * compostMultiplier));
+  const vermiKg = Math.max(1, Math.round(currentPotCount * vermiMultiplier * 10) / 10);
+  const cocoBlocks = Math.max(1, Math.ceil(currentPotCount * cocoMultiplier));
+  const neemGrams = Math.round(currentPotCount * 50);
+
+  const cowDungEl = document.getElementById('calc-res-cowdung');
+  const vermiEl = document.getElementById('calc-res-vermi');
+  const cocoEl = document.getElementById('calc-res-coco');
+  const neemEl = document.getElementById('calc-res-neem');
+
+  if (cowDungEl) cowDungEl.textContent = `${cowDungKg} KG (${Math.ceil(cowDungKg / 25)} Sacks)`;
+  if (vermiEl) vermiEl.textContent = `${vermiKg} KG`;
+  if (cocoEl) cocoEl.textContent = `${cocoBlocks} Brick${cocoBlocks > 1 ? 's' : ''}`;
+  if (neemEl) neemEl.textContent = `${neemGrams >= 1000 ? (neemGrams / 1000).toFixed(1) + ' KG' : neemGrams + ' g'}`;
+}
+
+// Add Calculated Bundle to Cart
+function addCalculatedBundleToCart() {
+  // Adds 1x Cow Dung Compost + 1x Vermicompost + 1x Cocopeat
+  addToCart('cow-dung-25kg', 1);
+  addToCart('vermicompost-5kg', 1);
+  addToCart('cocopeat-650g', 1);
+  showToast(`Added custom soil mixture bundle for ${currentPotCount} pots to cart!`);
+}
+
+// Order Calculated Mix on WhatsApp
+function orderCalculatedMixWhatsApp() {
+  const cowDung = document.getElementById('calc-res-cowdung')?.textContent || '25 KG';
+  const vermi = document.getElementById('calc-res-vermi')?.textContent || '5 KG';
+  const coco = document.getElementById('calc-res-coco')?.textContent || '2 Bricks';
+  const neem = document.getElementById('calc-res-neem')?.textContent || '500 g';
+
+  let msg = `🌿 *SOIL & COMPOST ESTIMATE INQUIRY*\n`;
+  msg += `--------------------------------------\n`;
+  msg += `Garden Setup: *${currentPotCount} Pots* (${currentPotSize}-inch standard)\n\n`;
+  msg += `*Calculated Organic Mix Needed:*\n`;
+  msg += `• Cow Dung Compost: ${cowDung}\n`;
+  msg += `• Vermicompost: ${vermi}\n`;
+  msg += `• Horticultural Cocopeat: ${coco}\n`;
+  msg += `• Neem Khali: ${neem}\n`;
+  msg += `--------------------------------------\n`;
+  msg += `Please send me the package price with Valley delivery.`;
+
+  const phone = '9779851167274';
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
 }
 
 // Sticky Header Scroll

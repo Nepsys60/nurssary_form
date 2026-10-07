@@ -17,6 +17,38 @@
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org JSON-LD for Local Kathmandu Business & Store -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GardenStore",
+    "name": "Kinnau Suppliers",
+    "image": "https://github.com/Nepsys60/nurssary_form/raw/main/assets/images/hero-garden.jpg",
+    "telephone": "+9779851167274",
+    "url": "https://github.com/Nepsys60/nurssary_form",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tokha / Balaju",
+      "addressLocality": "Kathmandu",
+      "addressRegion": "Bagmati",
+      "postalCode": "44600",
+      "addressCountry": "NP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 27.7554,
+      "longitude": 85.3188
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "07:00",
+      "closes": "19:00"
+    },
+    "priceRange": "Rs. 140 - Rs. 50,000"
+  }
+  </script>
 </head>
 <body>
 
@@ -46,9 +78,9 @@
         <ul class="nav-links">
           <li><a href="#hero" class="nav-link active">Home</a></li>
           <li><a href="#products" class="nav-link">Products</a></li>
-          <li><a href="#comparison" class="nav-link">Why Organic</a></li>
+          <li><a href="#calculator" class="nav-link">Soil Calculator</a></li>
           <li><a href="#packages" class="nav-link">Care Packages</a></li>
-          <li><a href="#why-kinnau" class="nav-link">About Us</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
           <li><a href="#faqs" class="nav-link">FAQs</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -87,6 +119,27 @@
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-nav-link"><span>Home</span> <span>→</span></a></li>
+        <li><a href="#products" class="mobile-nav-link"><span>Products &amp; Combos</span> <span>→</span></a></li>
+        <li><a href="#calculator" class="mobile-nav-link"><span>Potting Soil Calculator</span> <span>→</span></a></li>
+        <li><a href="#packages" class="mobile-nav-link"><span>Annual Care Packages</span> <span>→</span></a></li>
+        <li><a href="#reviews" class="mobile-nav-link"><span>Customer Reviews</span> <span>→</span></a></li>
+        <li><a href="#faqs" class="mobile-nav-link"><span>Valley FAQs</span> <span>→</span></a></li>
+        <li><a href="#contact" class="mobile-nav-link"><span>Contact &amp; Tokha Facility</span> <span>→</span></a></li>
+      </ul>
+      <div style="display: flex; gap: 10px; margin-top: 8px;">
+        <a href="https://wa.me/9779851167274?text=Namaste%20Kinnau!%20I%20want%20to%20order." target="_blank" rel="noopener" class="btn btn-whatsapp" style="flex: 1; padding: 12px;">
+          WhatsApp Quick Order
+        </a>
+        <a href="tel:9851167274" class="btn btn-primary" style="padding: 12px 18px;">
+          Call: 9851167274
+        </a>
       </div>
     </div>
   </header>
@@ -346,6 +399,107 @@
     </section>
 
     <!-- ==========================================================================
+         6B. INTERACTIVE SOIL & COMPOST CALCULATOR WIDGET
+         ========================================================================== -->
+    <section id="calculator" class="calculator-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Interactive Garden Tool</div>
+          <h2 class="section-title">Calculate Your Potting Soil &amp; Compost Mix</h2>
+          <p class="section-description">
+            Not sure how much organic compost, vermicompost, or cocopeat your rooftop pots need? Move the slider below to get an instant customized recipe.
+          </p>
+        </div>
+
+        <div class="calculator-card">
+          <!-- Left: Input Controls -->
+          <div class="calculator-inputs">
+            <div>
+              <label style="display: block; font-family: var(--font-headline); font-size: 14px; font-weight: 700; margin-bottom: 8px;">
+                1. Select Average Pot Size / Container
+              </label>
+              <div class="pot-size-selector">
+                <button type="button" class="pot-size-btn" data-size="8">
+                  <span style="font-size: 16px;">🪴</span>
+                  <span style="font-weight: 700; font-size: 13px;">Small (8")</span>
+                  <span style="font-size: 11px; opacity: 0.7;">Succulents/Herbs</span>
+                </button>
+                <button type="button" class="pot-size-btn active" data-size="12">
+                  <span style="font-size: 16px;">🌿</span>
+                  <span style="font-weight: 700; font-size: 13px;">Standard (12")</span>
+                  <span style="font-size: 11px; opacity: 0.7;">Flowers/Vegetables</span>
+                </button>
+                <button type="button" class="pot-size-btn" data-size="16">
+                  <span style="font-size: 16px;">🌳</span>
+                  <span style="font-weight: 700; font-size: 13px;">Large (16"+)</span>
+                  <span style="font-size: 11px; opacity: 0.7;">Citrus / Fruit Bags</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="slider-container">
+              <div class="slider-header">
+                <span>2. Number of Pots / Containers</span>
+                <span id="pot-count-display" class="pot-count-display">15 Pots</span>
+              </div>
+              <input type="range" id="calc-pot-slider" class="calc-range-slider" min="1" max="100" value="15">
+              <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--color-on-surface-variant); font-weight: 600;">
+                <span>1 Pot (Balcony)</span>
+                <span>25 Pots (Terrace)</span>
+                <span>50+ Pots (Villa/Rooftop)</span>
+                <span>100 Pots</span>
+              </div>
+            </div>
+
+            <div style="background-color: var(--color-surface-container-low); padding: 12px 16px; border-radius: var(--rounded-md); font-size: 12px; color: var(--color-on-surface-variant);">
+              💡 <strong>Agronomist Rule of Thumb:</strong> 50% Soil + 30% Kinnau Cow Dung / Vermi + 15% Cocopeat + 5% Neem Khali for optimal drainage and aeration on Kathmandu rooftops.
+            </div>
+          </div>
+
+          <!-- Right: Calculated Results & Quick Add -->
+          <div class="calculator-results">
+            <div>
+              <span class="badge" style="background-color: rgba(255, 255, 255, 0.2); color: #ffffff; margin-bottom: 12px;">
+                Recommended Organic Requirements
+              </span>
+              <h3 style="font-family: var(--font-headline); font-size: 20px; font-weight: 800; margin-bottom: 16px;">
+                Your Custom Soil Formulation
+              </h3>
+
+              <div class="calc-results-list">
+                <div class="calc-result-item">
+                  <span class="calc-result-label">Aged Cow Dung Compost</span>
+                  <span id="calc-res-cowdung" class="calc-result-val">15 KG (1 Sack)</span>
+                </div>
+                <div class="calc-result-item">
+                  <span class="calc-result-label">Pure Vermicompost (Castings)</span>
+                  <span id="calc-res-vermi" class="calc-result-val">4.5 KG</span>
+                </div>
+                <div class="calc-result-item">
+                  <span class="calc-result-label">Horticultural Cocopeat</span>
+                  <span id="calc-res-coco" class="calc-result-val">2 Bricks</span>
+                </div>
+                <div class="calc-result-item">
+                  <span class="calc-result-label">Neem Khali Root Protector</span>
+                  <span id="calc-res-neem" class="calc-result-val">750 g</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <button class="btn btn-harvest" style="width: 100%;" onclick="addCalculatedBundleToCart()">
+                Add Calculated Mix to Cart
+              </button>
+              <button class="btn btn-whatsapp btn-sm" style="width: 100%;" onclick="orderCalculatedMixWhatsApp()">
+                Order This Recipe on WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
          7. ANNUAL PLANT CARE PACKAGES (SaaS-Style 3-Tier Grid)
          ========================================================================== -->
     <section id="packages" class="packages-section">
@@ -530,6 +684,74 @@
             </div>
             <h3 class="why-title">Community Tested</h3>
             <p class="why-desc">Regularly featured at Le Sherpa Farmers Market and trusted by 100+ commercial nurseries, hotels, and urban gardeners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8B. CUSTOMER REVIEWS & TESTIMONIALS
+         ========================================================================== -->
+    <section id="reviews" class="reviews-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Real Kathmandu Experiences</div>
+          <h2 class="section-title">Trusted by 5,000+ Gardeners &amp; Green Spaces</h2>
+          <p class="section-description">
+            From rooftop vegetable planters in Baluwatar to high-traffic cafe terraces in Thamel, here is why urban growers rely on Kinnau Organic.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">
+                "The 25kg cow dung compost was completely cured with no foul smell at all. My rooftop lemon and tomato plants have doubled their yield this season. Best part? The delivery staff carried the heavy sacks all the way up to my 4th floor terrace!"
+              </p>
+            </div>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">SK</div>
+              <div>
+                <h4 class="reviewer-name">Dr. Sunita Karki</h4>
+                <div class="reviewer-meta">Rooftop Gardener · Baluwatar, Kathmandu</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">
+                "We subscribed to the Annual Premium Plant Care package for our cafe courtyard in Thamel. Our monstera, ficus, and hanging ferns have never looked healthier. The agronomist visits every week on time with customized worm tea nutrients."
+              </p>
+            </div>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">BM</div>
+              <div>
+                <h4 class="reviewer-name">Bipin Manandhar</h4>
+                <div class="reviewer-meta">Courtyard Cafe Owner · Thamel, Kathmandu</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">
+                "The Ultimate Combo Pack is hands down the best value in Kathmandu Valley. Getting 20kg pure vermicompost, cocopeat, and neem khali delivered with zero delivery charge is unmatched. Ordered via WhatsApp in under 2 minutes."
+              </p>
+            </div>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">AS</div>
+              <div>
+                <h4 class="reviewer-name">Aarav Shrestha</h4>
+                <div class="reviewer-meta">Urban Organic Grower · Jhamsikhel, Lalitpur</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

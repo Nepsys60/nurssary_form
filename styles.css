@@ -1927,3 +1927,283 @@ button {
 .toast-notification.active {
   transform: translateX(-50%) translateY(0);
 }
+
+/* ==========================================================================
+   MOBILE NAVIGATION DRAWER
+   ========================================================================== */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 76px;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 2px solid var(--color-border-card);
+  box-shadow: var(--shadow-level-3);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 49;
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-smooth);
+}
+
+.mobile-nav-drawer.active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-headline);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-surface-container-low);
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-link:hover, .mobile-nav-link.active {
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   INTERACTIVE SOIL & COMPOST CALCULATOR WIDGET
+   ========================================================================== */
+.calculator-section {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f8f1 100%);
+  border-bottom: 1px solid var(--color-border-card);
+}
+
+.calculator-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--rounded-xl);
+  box-shadow: var(--shadow-level-2);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+@media (max-width: 860px) {
+  .calculator-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calculator-inputs {
+  padding: var(--space-xl);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.calculator-results {
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, #0d631b 0%, #1b5e20 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.pot-size-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.pot-size-btn {
+  padding: 12px 8px;
+  text-align: center;
+  border: 1.5px solid var(--color-border-card);
+  border-radius: var(--rounded-md);
+  background-color: var(--color-surface);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.pot-size-btn:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface-container-low);
+}
+
+.pot-size-btn.active {
+  border-color: var(--color-primary);
+  background-color: #e8f5e9;
+  color: var(--color-primary);
+  box-shadow: 0 4px 10px rgba(13, 99, 27, 0.15);
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-headline);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pot-count-display {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+  background: #e8f5e9;
+  padding: 2px 14px;
+  border-radius: var(--rounded-full);
+}
+
+.calc-range-slider {
+  width: 100%;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  height: 6px;
+  border-radius: 4px;
+}
+
+.calc-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calc-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.calc-result-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.calc-result-val {
+  font-family: var(--font-headline);
+  font-size: 18px;
+  font-weight: 800;
+  color: #a3f69c;
+}
+
+/* ==========================================================================
+   TESTIMONIALS & REVIEWS SECTION
+   ========================================================================== */
+.reviews-section {
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border-card);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 960px) {
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+}
+
+.review-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-level-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-level-2);
+  border-color: #bfcaba;
+}
+
+.review-stars {
+  color: var(--color-harvest);
+  font-size: 16px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.review-quote {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-on-surface);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.reviewer-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-card);
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d631b 0%, #2e7d32 100%);
+  color: #ffffff;
+  font-family: var(--font-headline);
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reviewer-name {
+  font-family: var(--font-headline);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.reviewer-meta {
+  font-size: 12px;
+  color: var(--color-on-surface-variant);
+}
+
