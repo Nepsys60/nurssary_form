@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#F4F6F0"/>
+  <circle cx="200" cy="150" r="110" fill="#E2FADD"/>
+  <ellipse cx="200" cy="235" rx="110" ry="20" fill="#C9E1C4" opacity="0.7"/>
+  <!-- 3D Brick Perspective -->
+  <!-- Top Face -->
+  <polygon points="150,110 240,95 270,125 180,140" fill="#8D6E63"/>
+  <!-- Front Face -->
+  <polygon points="150,110 180,140 180,215 150,185" fill="#4E342E"/>
+  <!-- Right Face -->
+  <polygon points="180,140 270,125 270,200 180,215" fill="#5D4037"/>
+  <!-- Plastic Wrap Gloss -->
+  <polygon points="155,115 235,102 265,130 185,143" fill="#FFFFFF" opacity="0.15"/>
+  <!-- Sticker Band -->
+  <polygon points="195,137 245,129 245,185 195,193" fill="#FFFFFF"/>
+  <text x="220" y="155" font-family="Plus Jakarta Sans, sans-serif" font-size="8" font-weight="800" fill="#0D200E" text-anchor="middle">COCOPEAT</text>
+  <text x="220" y="167" font-family="Inter, sans-serif" font-size="6" font-weight="700" fill="#2E7D32" text-anchor="middle">BLOCK 650G</text>
+  <text x="220" y="178" font-family="Inter, sans-serif" font-size="5.5" font-weight="600" fill="#5D4037" text-anchor="middle">YIELDS 9 LITRES</text>
+</svg>

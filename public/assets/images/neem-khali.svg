@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#F4F6F0"/>
+  <circle cx="200" cy="150" r="110" fill="#FEF3C7"/>
+  <ellipse cx="200" cy="230" rx="110" ry="22" fill="#E4E2DD" opacity="0.8"/>
+  <!-- Pouch Shape -->
+  <path d="M150 90H250L265 220C265 232 235 240 200 240C165 240 135 232 135 220L150 90Z" fill="#D7CCC8"/>
+  <path d="M153 95H247L260 215C260 226 232 234 200 234C168 234 140 226 140 215L153 95Z" fill="#BCAAA4"/>
+  <!-- Zip Top Seal -->
+  <rect x="145" y="85" width="110" height="12" rx="4" fill="#8D6E63"/>
+  <!-- Center Label -->
+  <rect x="155" y="115" width="90" height="100" rx="8" fill="#FFFFFF"/>
+  <rect x="160" y="120" width="80" height="90" rx="6" fill="#FBF9F4" stroke="#794B00" stroke-width="1.5"/>
+  <text x="200" y="145" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800" fill="#0D200E" text-anchor="middle">NEEM KHALI</text>
+  <text x="200" y="158" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#794B00" text-anchor="middle">ORGANIC PEST SHIELD</text>
+  <!-- Neem Leaf graphic -->
+  <path d="M190 175C200 165 210 175 210 185C200 185 190 180 190 175Z" fill="#2E7D32"/>
+  <path d="M210 175C200 165 190 175 190 185C200 185 210 180 210 175Z" fill="#4CAF50"/>
+  <text x="200" y="200" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" fill="#2E7D32" text-anchor="middle">SOIL IMMUNITY</text>
+</svg>

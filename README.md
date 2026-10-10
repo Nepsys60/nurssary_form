@@ -1,65 +1,28 @@
-# Kinnau Suppliers — Organic Agri-Retail Storefront
+# Kinnau Suppliers — Organic Compost & Plant Care Storefront
 
-A modern, high-converting digital storefront for **Kinnau Suppliers**, a premier organic fertilizer, vermicompost, and plant care provider based in Tokha, Kathmandu, Nepal.
+A bespoke digital storefront for **Kinnau Suppliers (किन्नौ सप्लायर्स)**, an organic fertilizer, vermicompost, and soil care provider based in Tokha, Kathmandu, Nepal.
 
-Built faithfully from the **Stitch UI Design System** (*Organic Agri-Retail Commerce*).
+Redesigned specifically to eliminate generic AI landing-page tropes, replacing them with authentic botanical craftsmanship, transparent local delivery logistics, and genuine commercial value for Kathmandu rooftop gardeners.
 
 ---
 
-## 🌿 Brand Ethos
+## 🌿 Brand Identity & Ethos
 > *"तपाईंको हरियाली, हाम्रो जिम्मेवारी"* (Your Greenery, Our Responsibility)
 
-The storefront bridges local Himalayan agricultural heritage with a modern e-commerce conversion experience tailored for Kathmandu homeowners, rooftop gardeners, villa caretakers, and commercial nursery managers.
+Direct from our composting yard in **Tokha / Balaju, Kathmandu**, Kinnau provides 120-day naturally cured cow dung compost, pure earthworm vermicompost, low-EC washed cocopeat, and organic neem khali to urban rooftop growers, terrace farming enthusiasts, and local nurseries across Kathmandu Valley.
 
 ---
 
-## ✨ Features
+## ✨ Features & Customer Journey
 
-- **Cinematic Hero Experience**: Display hero headline (*"Power Your Soil. Naturally."*), value statistics bar, and instant WhatsApp ordering anchors.
-- **Why Switch to Organic Matrix**: Comparative analysis between chemical fertilizers (Urea/DAP burn, soil compaction) vs. Kinnau organic microbial benefits (+40% moisture retention, living mycorrhizae).
-- **Interactive Products Grid**: Filterable catalog (*All, Fertilizers & Compost, Combo Deals, Soil Amendments*) with quantity steppers and quick-view modals.
-- **Featured 5-in-1 Combo Pack**: Highlighted bundle card with Vermicompost 20 KG, Cocopeat block, Mustard Cake Pina, Bone Meal, and Neem Khali.
-- **Annual Plant Care Packages**: 3-Tier SaaS-style maintenance matrices (*Basic Home*, *Premium Villa/Office*, *Corporate Enterprise*).
-- **Interactive Cart Slide-Out Drawer**: Real-time item totals, Valley delivery fee waiver calculation (Free above Rs. 1,000), and automated WhatsApp checkout formatting.
-- **Direct WhatsApp Integration**: Pre-fills product details, quantities, delivery locations, and contact info directly to `+977 9851167274`.
-- **Local Kathmandu Logistics**: Doorstep delivery options, cash on delivery (COD), eSewa, and Khalti payment support.
-
----
-
-## 🎨 Design System Specifications
-
-- **Typography**: Google Fonts [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) (Headlines, Offers, Prices) & [Inter](https://fonts.google.com/specimen/Inter) (Body & Technical Specs).
-- **Color Palette**:
-  - Primary Foliage Green: `#0D631B` / `#2E7D32`
-  - Secondary Soil Brown: `#5D4037` / `#77574D`
-  - Tertiary Harvest Gold: `#F59E0B`
-  - Direct WhatsApp Accent: `#25D366`
-  - Seed Paper Surfaces: `#FBFBFA` / `#EBFFE6` / `#E2FADD`
-  - High-Contrast Text: `#0D200E` / `#40493D`
-- **Spacing Scale**: 8pt/4pt mathematical scale with responsive gutters and mobile padding.
-- **Elevation System**: Multi-layer warm ambient shadows with subtle organic borders (`#E2E8D8`).
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-Any modern web browser or lightweight HTTP server.
-
-### Run Locally
-```bash
-# Clone the repository
-git clone https://github.com/Nepsys60/nurssary_form.git
-cd nurssary_form
-
-# Start a local static server (Python)
-python3 -m http.server 8080
-
-# Or with Node.js
-npx serve .
-```
-
-Open `http://localhost:8080` in your browser.
+- **Editorial Botanical Direction**: Handcrafted typography pairing **Fraunces** (characterful editorial serif) with **Plus Jakarta Sans** (clean, crisp legibility) on a warm unbleached linen & rich loam palette.
+- **Flagship 5-in-1 Combo Spotlight**: Detailed breakdown of Kathmandu's bestselling complete garden kit (20 KG Vermicompost + Cocopeat + Mustard Pina + Steamed Bone Meal + Neem Khali) at Rs. 1,499 with Free Valley Delivery.
+- **Curated Horticultural Catalog**: Filterable catalog with authentic product photography, real Nepalese Rupee pricing, sack weights, and instant quantity steppers.
+- **Kathmandu Rooftop Potting Formula**: Practical, high-value potting recipe (50% local soil + 30% Kinnau compost + 15% washed cocopeat + 5% neem khali & bone meal) addressing local monsoon drainage and dry winter care.
+- **Container Agronomy Insights**: Clear explanation of why chemical DAP/urea causes salt burn in closed terrace pots vs how living organic compost protects roots.
+- **Tokha Production Yard Transparency**: Step-by-step documentation of our 120-day aerobic curing, heat sterilization of weed seeds, and fine mesh screening.
+- **Real-Time Valley Cart & WhatsApp Checkout**: Interactive slide-out cart with automated free delivery calculation (orders ≥ Rs. 1,000) and structured WhatsApp order generator.
+- **Kathmandu Valley Logistics**: Direct delivery across Kathmandu, Lalitpur, and Bhaktapur with heavy sack stair-carrying assistance, cash on delivery (COD), eSewa, and Fonepay QR.
 
 ---
 
@@ -67,25 +30,46 @@ Open `http://localhost:8080` in your browser.
 
 ```
 .
-├── index.html           # Main semantic HTML5 landing page & modals
-├── styles.css           # Vanilla CSS implementing Stitch design tokens
-├── app.js               # Cart state, filters, modal logic & WhatsApp link generator
+├── index.html           # Semantic HTML5 landing page & accessible modals
+├── styles.css           # Custom artisanal botanical design system
+├── app.js               # ES module: catalog state, cart drawer & WhatsApp order generator
 ├── assets/
-│   └── images/          # High-resolution product photos & SVG vectors
-│       ├── hero-garden.jpg
-│       ├── combo-pack.jpg
-│       ├── cow-dung-compost.jpg
-│       ├── kinnau-logo.svg
-│       ├── vermicompost.svg
-│       ├── neem-khali.svg
-│       ├── cocopeat.svg
-│       └── bone-meal.svg
-├── .gitignore           # Ignored system files
+│   └── images/          # Authentic product photography and vector marks
+│       ├── hero-garden.jpg          # Kathmandu rooftop terrace garden
+│       ├── combo-pack.jpg           # 5-in-1 Complete Plant Health Combo
+│       ├── cow-dung-compost.jpg     # 25 KG Cured Cow Dung Compost sack
+│       ├── vermicompost.jpg         # 5 KG Pure Earthworm Vermicompost
+│       ├── cocopeat.jpg             # 650g Horticultural Low-EC Cocopeat block
+│       ├── neem-khali.jpg           # 1 KG Pure Organic Neem Khali pouch
+│       ├── bone-meal.svg            # Botanical Steamed Bone Meal artwork
+│       └── kinnau-logo.svg          # Official Kinnau brand mark
+├── public/              # Static public assets for production build
+├── package.json         # Build configuration (Vite)
 └── README.md            # Project documentation
 ```
 
 ---
 
-## 📞 Contact & Warehouse
-- **Production Facility**: Tokha / Balaju, Kathmandu, Nepal
-- **Direct Hotline**: +977 9851167274
+## 🚀 Getting Started
+
+### Local Development
+```bash
+# Install dependencies
+npm install
+
+# Start Vite dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+---
+
+## 📞 Facility & Contact
+- **Composting Yard & Warehouse**: Tokha / Balaju, Kathmandu, Nepal
+- **Direct Hotline & WhatsApp**: +977 9851167274
+- **Working Hours**: Sunday – Friday, 7:00 AM – 7:00 PM
